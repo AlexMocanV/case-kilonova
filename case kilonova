@@ -1,0 +1,103 @@
+Kilonova
+Probleme
+Concursuri
+Submisii
+AlexMocan
+Submisia #181884
+Informații
+Autor submisie	AlexMocan
+Problema	Case
+Data încărcării	26/01/2024 19:38
+Scor	100
+Timp	64 ms
+Memorie	3.03 MB
+Limbaj	C++17
+Dimensiunea codului	575 B
+Status	finished
+Submisiile tale
+#181884: 26/01/2024 19:38
+100
+#181173: 25/01/2024 20:59
+0
+#181171: 25/01/2024 20:59
+0
+#180817: 25/01/2024 13:03
+50
+#180816: 25/01/2024 13:03
+0
+Vezi încă 5 submisii
+Teste
+ID	Timp	Memorie	Verdict	Scor
+1	0 ms	188 KB	Corect	10 / 10
+2	0 ms	256 KB	Corect	10 / 10
+3	45 ms	3100 KB	Corect	10 / 10
+4	50 ms	1836 KB	Corect	10 / 10
+5	64 ms	2328 KB	Corect	10 / 10
+6	45 ms	1832 KB	Corect	10 / 10
+7	23 ms	1300 KB	Corect	10 / 10
+8	28 ms	1860 KB	Corect	10 / 10
+9	52 ms	2456 KB	Corect	20 / 20
+Codul Sursă:
+#include <bits/stdc++.h>
+
+using namespace std;
+
+vector<int> v;
+stack<int>s ;
+
+int main()
+{
+    int n,i;
+    cin>>n;
+    v.resize(n);
+    for(auto& i:v)
+    {
+        cin>>i;
+    }
+    v.resize(n+1);
+    for(i=n;i>=1;i--)
+    {
+        v[i]=v[i-1];
+    }
+    for(i=1;i<=n;i++)
+    {
+        while(s.empty()==false && v[i]<=v[s.top()])
+        {
+            s.pop();
+        }
+        if(s.empty()==true)
+        {
+            cout<<0<<" ";
+        }
+        else if(v[i]>v[s.top()])
+        {
+            cout<<s.top()<<" ";
+        }
+        s.push(i);
+    }
+    return 0;
+}
+Copy
+CopiereDescărcare
+Creare paste
+Link-uri utile
+Pagina principală
+Donează
+Probleme
+Concursuri
+Submisii
+Postări
+
+🇷🇴 Română
+ Limbă afișaj
+Alte informații
+ Kilonova v0.24.0
+ Ora serverului: 21:41:04
+ KiloProjects Discord
+ GitHub
+ Contact
+Credite
+Platform made with  by Alex Vasiluță
+Problems generously uploaded by the Kilonova community
+Favicon by Secret-chest
+Cu excepția cazurilor unde este specificat diferit, conținutul platformei este publicat sub licența CC BY-NC-SA 4.0. Vedeți aici mai multe detalii.Creative Commons Licence
